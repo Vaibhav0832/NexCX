@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { calculators, MONEY_FIELDS, PERCENT_FIELDS } from "./constants";
 import { calculateOpportunity, calculatorEngines, validateInputs } from "./calculations";
 
-const currency = new Intl.NumberFormat("en-US", {
+const currency = new Intl.NumberFormat("en-IN", {
   style: "currency",
-  currency: "USD",
+  currency: "INR",
   maximumFractionDigits: 0,
 });
 
@@ -32,13 +32,13 @@ function formatMetric(metric) {
 }
 
 function FieldInput({ field, value, error, onChange }) {
-  const suffix = PERCENT_FIELDS.has(field.id) ? "%" : MONEY_FIELDS.has(field.id) ? "$" : "";
+  const suffix = PERCENT_FIELDS.has(field.id) ? "%" : MONEY_FIELDS.has(field.id) ? "₹" : "";
 
   return (
     <label className="group flex flex-col gap-2 rounded-lg border border-white/8 bg-white/[0.035] p-3 transition-colors focus-within:border-signal/60">
       <span className="text-xs font-medium uppercase tracking-[0.14em] text-slate-soft">{field.label}</span>
       <span className="flex items-center gap-2">
-        {suffix === "$" && <span className="font-mono text-sm text-signal">$</span>}
+        {suffix === "₹" && <span className="font-mono text-sm text-signal">₹</span>}
         <input
           type="number"
           min="0"
