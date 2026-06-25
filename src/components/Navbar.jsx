@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 const links = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "Insights", href: "#insights" },
   { label: "Why NexCX", href: "#why" },
   { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" },
