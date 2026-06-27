@@ -23,7 +23,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           src="/logo-full.png"
-          alt="NexCX — Optimize Your Genesys Investment"
+          alt="NexCX - Multi-technology contact center consulting"
           className="mx-auto w-full max-w-md md:max-w-lg mb-8 select-none"
           draggable="false"
         />
@@ -35,7 +35,7 @@ export default function Hero() {
           className="font-display text-4xl md:text-6xl font-semibold leading-tight tracking-tight text-ice"
         >
           Optimize Your{" "}
-          <span className="text-gradient">Genesys Investment</span>
+          <span className="text-gradient">Contact Center Technology</span>
         </motion.h1>
 
         <motion.p
@@ -44,9 +44,9 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-6 text-lg md:text-xl text-slate-soft max-w-2xl mx-auto leading-relaxed"
         >
-          Independent Genesys consulting helping organizations reduce costs,
-          improve architecture, strengthen governance, and maximize platform
-          value.
+          Independent contact center consulting across Genesys, Cisco, NICE,
+          Amazon Connect, Five9, Talkdesk, Avaya, Verint, and Alvaria
+          environments.
         </motion.p>
 
         <motion.div
@@ -82,7 +82,7 @@ export default function Hero() {
           <span className="w-1 h-1 rounded-full bg-slate-soft/40" />
           <span>Independent Advisory</span>
           <span className="w-1 h-1 rounded-full bg-slate-soft/40" />
-          <span>Enterprise Genesys Expertise</span>
+          <span>Multi-Technology Expertise</span>
         </motion.div>
       </div>
     </section>

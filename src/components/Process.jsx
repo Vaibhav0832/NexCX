@@ -5,7 +5,7 @@ const steps = [
   {
     n: "01",
     title: "Discovery",
-    desc: "We learn your current Genesys setup, business goals, and pain points through structured conversations with your team.",
+    desc: "We learn your current contact center environment, business goals, and pain points through structured conversations with your team.",
   },
   {
     n: "02",

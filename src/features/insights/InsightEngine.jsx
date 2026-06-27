@@ -35,7 +35,7 @@ function FieldInput({ field, value, error, onChange }) {
   const suffix = PERCENT_FIELDS.has(field.id) ? "%" : MONEY_FIELDS.has(field.id) ? "₹" : "";
 
   return (
-    <label className="group flex flex-col gap-2 rounded-lg border border-white/8 bg-white/[0.035] p-3 transition-colors focus-within:border-signal/60">
+    <label className="group flex flex-col gap-1.5 rounded-lg border border-white/8 bg-white/[0.035] p-2.5 transition-colors focus-within:border-signal/60">
       <span className="text-xs font-medium uppercase tracking-[0.14em] text-slate-soft">{field.label}</span>
       <span className="flex items-center gap-2">
         {suffix === "₹" && <span className="font-mono text-sm text-signal">₹</span>}
@@ -46,7 +46,7 @@ function FieldInput({ field, value, error, onChange }) {
           step="0.1"
           value={value}
           onChange={(event) => onChange(field.id, event.target.value)}
-          className="w-full bg-transparent font-display text-lg font-semibold text-ice outline-none"
+          className="w-full bg-transparent font-display text-base font-semibold text-ice outline-none"
         />
         {suffix === "%" && <span className="font-mono text-sm text-signal">%</span>}
       </span>
@@ -57,9 +57,9 @@ function FieldInput({ field, value, error, onChange }) {
 
 function MetricCard({ metric }) {
   return (
-    <div className="rounded-lg border border-white/8 bg-navy-100/70 p-4">
+    <div className="rounded-lg border border-white/8 bg-navy-100/70 p-3">
       <p className="text-xs uppercase tracking-[0.16em] text-slate-soft">{metric.label}</p>
-      <p className="mt-2 break-words font-display text-2xl font-semibold text-ice">{formatMetric(metric)}</p>
+      <p className="mt-2 break-words font-display text-xl font-semibold text-ice">{formatMetric(metric)}</p>
     </div>
   );
 }
@@ -89,18 +89,18 @@ function BarChart({ data }) {
 
 function CalculatorShell({ calculator, values, result, errors, onChange }) {
   return (
-    <div className="grid gap-5 xl:grid-cols-[1.05fr_0.95fr]">
+    <div className="grid gap-4 xl:grid-cols-[1.1fr_0.9fr]">
       <div className="rounded-lg border border-white/8 bg-white/[0.04] p-4">
-        <div className="mb-4 flex items-start justify-between gap-4">
+        <div className="mb-3 flex items-start justify-between gap-4">
           <div>
             <p className="section-label">{calculator.category}</p>
-            <h3 className="mt-2 font-display text-2xl font-semibold text-ice">{calculator.title}</h3>
+            <h3 className="mt-2 font-display text-xl font-semibold text-ice">{calculator.title}</h3>
           </div>
           <span className={`h-10 w-10 shrink-0 rounded-lg bg-gradient-to-br ${calculator.accent} shadow-glow`} />
         </div>
-        <p className="mb-5 max-w-2xl text-sm leading-6 text-slate-soft">{calculator.description}</p>
+        <p className="mb-4 max-w-2xl text-sm leading-6 text-slate-soft">{calculator.description}</p>
         {calculator.fields.length > 0 ? (
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-2.5 sm:grid-cols-2">
             {calculator.fields.map((field) => (
               <FieldInput
                 key={field.id}
@@ -120,23 +120,23 @@ function CalculatorShell({ calculator, values, result, errors, onChange }) {
 
       <div className="rounded-lg border border-white/8 bg-navy-50/80 p-4">
         <p className="section-label">Live Output</p>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
           {result.metrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}
         </div>
-        <div className="mt-5 rounded-lg border border-white/8 bg-white/[0.035] p-4">
+        <div className="mt-4 rounded-lg border border-white/8 bg-white/[0.035] p-3">
           <p className="text-sm font-semibold text-ice">Recommendation</p>
           <p className="mt-2 text-sm leading-6 text-slate-soft">{result.recommendation}</p>
         </div>
         {result.summary && (
-          <div className="mt-3 rounded-lg border border-white/8 bg-white/[0.035] p-4">
+          <div className="mt-3 rounded-lg border border-white/8 bg-white/[0.035] p-3">
             <p className="text-sm font-semibold text-ice">Business Summary</p>
             <p className="mt-2 text-sm leading-6 text-slate-soft">{result.summary}</p>
           </div>
         )}
         {result.chart?.length > 0 && (
-          <div className="mt-5 rounded-lg border border-white/8 bg-white/[0.035] p-4">
+          <div className="mt-4 rounded-lg border border-white/8 bg-white/[0.035] p-3">
             <p className="mb-4 text-sm font-semibold text-ice">Signal Chart</p>
             <BarChart data={result.chart} />
           </div>
@@ -162,11 +162,11 @@ function SummaryCards({ results }) {
   ];
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+    <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
       {cards.map((card) => (
-        <div key={card.label} className="rounded-lg border border-white/8 bg-white/[0.045] p-5 shadow-glass">
+        <div key={card.label} className="rounded-lg border border-white/8 bg-white/[0.045] p-4 shadow-glass">
           <p className="text-xs uppercase tracking-[0.16em] text-slate-soft">{card.label}</p>
-          <p className="mt-3 font-display text-3xl font-semibold text-ice">{card.value}</p>
+          <p className="mt-2 font-display text-2xl font-semibold text-ice">{card.value}</p>
           <p className="mt-2 text-sm text-slate-soft">{card.note}</p>
         </div>
       ))}
@@ -176,28 +176,28 @@ function SummaryCards({ results }) {
 
 function RecentCalculations({ activeId, setActiveId, results }) {
   return (
-    <div className="rounded-lg border border-white/8 bg-white/[0.04] p-5">
-      <div className="mb-4 flex items-center justify-between gap-4">
+    <div className="rounded-lg border border-white/8 bg-white/[0.04] p-4">
+      <div className="mb-3 flex items-center justify-between gap-4">
         <div>
           <p className="section-label">Calculator Navigation</p>
-          <h3 className="mt-2 font-display text-xl font-semibold text-ice">Insight Modules</h3>
+          <h3 className="mt-2 font-display text-lg font-semibold text-ice">Select a calculator</h3>
         </div>
       </div>
-      <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-5">
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
         {calculators.map((calculator) => (
           <button
             key={calculator.id}
             type="button"
             onClick={() => setActiveId(calculator.id)}
-            className={`min-h-24 rounded-lg border p-3 text-left transition-all ${
+            className={`min-h-16 rounded-lg border p-2.5 text-left transition-all ${
               activeId === calculator.id
                 ? "border-signal/60 bg-signal/10 text-ice"
                 : "border-white/8 bg-navy-100/55 text-slate-soft hover:border-white/20 hover:text-ice"
             }`}
           >
-            <span className={`mb-3 block h-1.5 w-14 rounded-full bg-gradient-to-r ${calculator.accent}`} />
-            <span className="block text-sm font-semibold">{calculator.title}</span>
-            <span className="mt-2 block font-mono text-xs text-slate-soft">
+            <span className={`mb-2 block h-1 w-10 rounded-full bg-gradient-to-r ${calculator.accent}`} />
+            <span className="block text-xs font-semibold leading-5">{calculator.title}</span>
+            <span className="mt-1 block font-mono text-[0.7rem] text-slate-soft">
               {currency.format((results[calculator.id]?.savings || 0) * 12)}
             </span>
           </button>
@@ -220,11 +220,11 @@ function Recommendations({ results }) {
 
   return (
     <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-      <div className="rounded-lg border border-white/8 bg-white/[0.04] p-5">
+      <div className="rounded-lg border border-white/8 bg-white/[0.04] p-4">
         <p className="section-label">Optimization Opportunities</p>
         <div className="mt-5 space-y-4">
           {ranked.map((item, index) => (
-            <div key={item.title} className="flex items-center justify-between gap-4 rounded-lg bg-navy-100/65 p-4">
+            <div key={item.title} className="flex items-center justify-between gap-4 rounded-lg bg-navy-100/65 p-3">
               <div>
                 <p className="font-semibold text-ice">{item.title}</p>
                 <p className="mt-1 text-sm text-slate-soft">Priority {index + 1}</p>
@@ -234,11 +234,11 @@ function Recommendations({ results }) {
           ))}
         </div>
       </div>
-      <div className="rounded-lg border border-white/8 bg-white/[0.04] p-5">
+      <div className="rounded-lg border border-white/8 bg-white/[0.04] p-4">
         <p className="section-label">Recommendations</p>
         <div className="mt-5 space-y-3">
           {ranked.map((item) => (
-            <div key={item.recommendation} className="rounded-lg border border-white/8 bg-navy-100/65 p-4">
+            <div key={item.recommendation} className="rounded-lg border border-white/8 bg-navy-100/65 p-3">
               <p className="text-sm font-semibold text-ice">{item.title}</p>
               <p className="mt-2 text-sm leading-6 text-slate-soft">{item.recommendation}</p>
             </div>
@@ -284,7 +284,7 @@ export default function InsightEngine() {
   }
 
   return (
-    <section id="insights" className="relative overflow-hidden py-24 sm:py-28">
+    <section id="insights" className="relative overflow-hidden py-20 sm:py-24">
       <div className="absolute inset-0 -z-10 bg-grad-radial-glow" />
       <div className="absolute left-1/2 top-20 -z-10 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-electric/10 blur-3xl" />
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -293,13 +293,13 @@ export default function InsightEngine() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="mb-10 max-w-4xl"
+          className="mb-7 max-w-4xl"
         >
-          <p className="section-label">NexCX Insight Engine</p>
+          <p className="section-label">Calculators</p>
           <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-ice sm:text-5xl">
             NexCX Insight Engine<sup className="text-gradient text-xl sm:text-2xl">TM</sup>
           </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-soft">
+          <p className="mt-4 text-base leading-7 text-slate-soft">
             A premium decision cockpit for cost, workforce, ROI, platform health, KPI performance,
             and optimization opportunity analysis.
           </p>

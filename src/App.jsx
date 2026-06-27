@@ -9,6 +9,7 @@ import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 
 const InsightEngine = lazy(() => import("./features/insights/InsightEngine.jsx"));
+const AIConsultant = lazy(() => import("./features/ai-consultant/AIConsultant.jsx"));
 
 export default function App() {
   return (
@@ -34,6 +35,9 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <Suspense fallback={null}>
+        <AIConsultant />
+      </Suspense>
     </div>
   );
 }

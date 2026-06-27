@@ -1,15 +1,22 @@
 import React from "react";
 
 const quickLinks = [
-  { label: "About", href: "#about" },
+  { label: "Home", href: "#top" },
   { label: "Services", href: "#services" },
-  { label: "Why NexCX", href: "#why" },
-  { label: "Process", href: "#process" },
+  { label: "Technologies", href: "#technologies" },
+  { label: "Calculators", href: "#insights" },
+  { label: "AI Consultant", href: "#ai-consultant", action: "ai" },
   { label: "Contact", href: "#contact" },
 ];
 
 export default function Footer() {
   const year = new Date().getFullYear();
+
+  function handleLinkClick(link) {
+    if (link.action === "ai") {
+      window.dispatchEvent(new CustomEvent("nexcx:open-ai-consultant"));
+    }
+  }
 
   return (
     <footer className="relative border-t border-white/8 bg-navy-100/60">
@@ -23,9 +30,8 @@ export default function Footer() {
               draggable="false"
             />
             <p className="text-sm text-slate-soft max-w-xs leading-relaxed">
-              Optimize Your Genesys Investment — independent Genesys
-              consulting for enterprises that depend on their contact center
-              platform.
+              Independent multi-technology contact center consulting for
+              enterprises that depend on resilient customer operations.
             </p>
           </div>
 
@@ -38,6 +44,7 @@ export default function Footer() {
                 <li key={l.href}>
                   <a
                     href={l.href}
+                    onClick={() => handleLinkClick(l)}
                     className="text-sm text-slate-soft hover:text-ice transition-colors"
                   >
                     {l.label}
@@ -65,7 +72,7 @@ export default function Footer() {
             © {year} NexCX. All rights reserved.
           </p>
           <p className="text-xs text-slate-soft/70">
-            Independent Genesys Consulting &amp; Advisory
+            Independent Contact Center Consulting &amp; Advisory
           </p>
         </div>
       </div>

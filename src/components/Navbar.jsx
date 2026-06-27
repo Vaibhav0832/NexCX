@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const links = [
-  { label: "About", href: "#about" },
+  { label: "Home", href: "#top" },
   { label: "Services", href: "#services" },
-  { label: "Insights", href: "#insights" },
-  { label: "Why NexCX", href: "#why" },
-  { label: "Process", href: "#process" },
+  { label: "Technologies", href: "#technologies" },
+  { label: "Calculators", href: "#insights" },
+  { label: "AI Consultant", href: "#ai-consultant", action: "ai" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -19,6 +19,13 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  function handleNavClick(link) {
+    if (link.action === "ai") {
+      window.dispatchEvent(new CustomEvent("nexcx:open-ai-consultant"));
+    }
+    setOpen(false);
+  }
 
   return (
     <header
@@ -36,11 +43,12 @@ export default function Navbar() {
           />
         </a>
 
-        <ul className="hidden lg:flex items-center gap-9 font-medium text-sm text-slate-soft">
+        <ul className="hidden lg:flex items-center gap-7 font-medium text-sm text-slate-soft">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
+                onClick={() => handleNavClick(l)}
                 className="hover:text-ice transition-colors duration-200"
               >
                 {l.label}
@@ -96,7 +104,7 @@ export default function Navbar() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  onClick={() => setOpen(false)}
+                  onClick={() => handleNavClick(l)}
                   className="block hover:text-ice transition-colors"
                 >
                   {l.label}

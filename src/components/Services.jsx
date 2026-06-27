@@ -17,8 +17,8 @@ const services = [
     ),
   },
   {
-    title: "Genesys Optimization Assessment",
-    desc: "Improve operational efficiency and platform utilization.",
+    title: "Platform Optimization Assessment",
+    desc: "Improve operational efficiency and platform utilization across your contact center stack.",
     icon: (
       <path
         d="M3 12h4l3 8 4-16 3 8h4"
@@ -31,7 +31,7 @@ const services = [
     ),
   },
   {
-    title: "Genesys Cost Optimization Assessment",
+    title: "Cost Optimization Assessment",
     desc: "Identify cost reduction opportunities and licensing optimization.",
     icon: (
       <path
@@ -45,7 +45,7 @@ const services = [
     ),
   },
   {
-    title: "Genesys Architecture Review",
+    title: "Architecture Review",
     desc: "Assess scalability, resilience, and best-practice alignment.",
     icon: (
       <path
@@ -59,7 +59,7 @@ const services = [
     ),
   },
   {
-    title: "Genesys Security & Governance Review",
+    title: "Security & Governance Review",
     desc: "Evaluate security posture, controls, compliance, and governance.",
     icon: (
       <path
@@ -73,7 +73,7 @@ const services = [
     ),
   },
   {
-    title: "Genesys Advisory Retainer",
+    title: "Advisory Retainer",
     desc: "Ongoing strategic and operational guidance.",
     icon: (
       <path
@@ -156,7 +156,7 @@ export default function Services() {
         <div className="max-w-2xl mb-16">
           <span className="section-label">What We Do</span>
           <h2 className="font-display text-3xl md:text-4xl font-semibold mt-4 text-ice leading-snug">
-            Specialist Genesys advisory across the platform lifecycle
+            Specialist contact center advisory across the platform lifecycle
           </h2>
         </div>
 

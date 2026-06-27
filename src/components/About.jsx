@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 const points = [
   {
     title: "Independent guidance",
-    desc: "No reseller margins, no platform quotas — recommendations driven solely by your outcomes.",
+    desc: "No reseller margins, no platform quotas - recommendations driven solely by your outcomes.",
   },
   {
     title: "Vendor-neutral recommendations",
-    desc: "We evaluate your Genesys estate on its merits, not on what's easiest to sell.",
+    desc: "We evaluate your contact center estate on its merits, not on what is easiest to sell.",
   },
   {
-    title: "Deep Genesys expertise",
-    desc: "Specialist knowledge of Genesys Cloud and on-prem architectures, licensing, and roadmaps.",
+    title: "Multi-platform expertise",
+    desc: "Specialist knowledge across cloud, hybrid, and on-premises contact center platforms.",
   },
   {
     title: "Practical implementation experience",
@@ -20,9 +20,22 @@ const points = [
   },
 ];
 
+const technologies = [
+  "Genesys Cloud CX",
+  "Genesys Engage",
+  "Cisco UCCE",
+  "NICE CXone",
+  "Amazon Connect",
+  "Five9",
+  "Talkdesk",
+  "Avaya",
+  "Verint",
+  "Alvaria",
+];
+
 export default function About() {
   return (
-    <section id="about" className="relative py-28 md:py-36">
+    <section id="technologies" className="relative py-28 md:py-36">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-14 items-start">
           <motion.div
@@ -32,22 +45,34 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5"
           >
-            <span className="section-label">About NexCX</span>
+            <span className="section-label">Technologies</span>
             <h2 className="font-display text-3xl md:text-4xl font-semibold mt-4 text-ice leading-snug">
-              Independent advisory for organizations who depend on Genesys
+              Independent advisory for multi-technology contact centers
             </h2>
             <p className="mt-6 text-slate-soft text-base md:text-lg leading-relaxed">
-              NexCX is an independent Genesys consulting company. We help
-              organizations optimize their investments, improve platform
-              performance, reduce operational costs, improve governance, and
-              strengthen architecture — without ties to any vendor's sales
-              targets.
+              NexCX helps enterprises optimize the platforms that run their
+              customer operations. We improve performance, reduce operational
+              cost, strengthen governance, and modernize architecture without
+              ties to any vendor sales target.
             </p>
             <p className="mt-4 text-slate-soft text-base md:text-lg leading-relaxed">
-              Our role is singular: make your Genesys platform work harder for
-              your business, and make sure every dollar you spend on it is
-              justified.
+              Our role is practical and outcome-focused: make your contact
+              center technology work harder for the business, and make every
+              platform investment easier to justify.
             </p>
+            <div className="mt-7">
+              <p className="text-sm font-semibold text-ice">Supported technologies</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {technologies.map((technology) => (
+                  <span
+                    key={technology}
+                    className="rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 text-xs font-medium text-slate-soft"
+                  >
+                    {technology}
+                  </span>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5">
