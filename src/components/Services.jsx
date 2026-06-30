@@ -1,94 +1,31 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 
-const services = [
+const features = [
   {
-    title: "Discovery Call",
-    desc: "Understand current challenges and business goals.",
+    title: "AI Consultant",
+    desc: "Interactive contact center guidance powered by local knowledge search.",
     icon: (
-      <path
-        d="M9 17l3-3 3 3M9 13l3-3 3 3M5 21h14a2 2 0 002-2V7l-6-4H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
+      <path d="M12 3v3M6 8h12a2 2 0 012 2v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7a2 2 0 012-2zM8 13h.01M16 13h.01M9 17h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
     ),
   },
   {
-    title: "Platform Optimization Assessment",
-    desc: "Improve operational efficiency and platform utilization across your contact center stack.",
+    title: "Insight Engine",
+    desc: "Calculators for cost, ROI, staffing, health, and optimization signals.",
     icon: (
-      <path
-        d="M3 12h4l3 8 4-16 3 8h4"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
+      <path d="M3 12h4l3 8 4-16 3 8h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
     ),
   },
   {
-    title: "Cost Optimization Assessment",
-    desc: "Identify cost reduction opportunities and licensing optimization.",
+    title: "Knowledge Base",
+    desc: "Structured technology intelligence with modular knowledge-base support.",
     icon: (
-      <path
-        d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
-    ),
-  },
-  {
-    title: "Architecture Review",
-    desc: "Assess scalability, resilience, and best-practice alignment.",
-    icon: (
-      <path
-        d="M4 6h16M4 12h16M4 18h16M8 6v12M16 6v12"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
-    ),
-  },
-  {
-    title: "Security & Governance Review",
-    desc: "Evaluate security posture, controls, compliance, and governance.",
-    icon: (
-      <path
-        d="M12 2l8 3.5V11c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V5.5L12 2z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
-    ),
-  },
-  {
-    title: "Advisory Retainer",
-    desc: "Ongoing strategic and operational guidance.",
-    icon: (
-      <path
-        d="M12 8v4l3 3M12 2a10 10 0 100 20 10 10 0 000-20z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
+      <path d="M5 5h10a4 4 0 014 4v10H9a4 4 0 01-4-4V5zM9 9h6M9 13h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
     ),
   },
 ];
 
-function ServiceCard({ s, index }) {
+function FeatureCard({ feature, index }) {
   const cardRef = useRef(null);
 
   function handleMouseMove(e) {
@@ -123,46 +60,31 @@ function ServiceCard({ s, index }) {
     >
       <div className="w-12 h-12 rounded-xl bg-grad-primary flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          {s.icon}
+          {feature.icon}
         </svg>
       </div>
       <h3 className="font-display font-semibold text-ice text-lg leading-snug">
-        {s.title}
+        {feature.title}
       </h3>
-      <p className="mt-3 text-sm text-slate-soft leading-relaxed">{s.desc}</p>
-      <a
-        href="#contact"
-        className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      >
-        Learn more
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-          <path
-            d="M3 8H13M13 8L9 4M13 8L9 12"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </a>
+      <p className="mt-3 text-sm text-slate-soft leading-relaxed">{feature.desc}</p>
     </motion.div>
   );
 }
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-28 md:py-36 bg-navy-50/40">
+    <section id="features" className="relative py-28 md:py-36 bg-navy-50/40">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="max-w-2xl mb-16">
-          <span className="section-label">What We Do</span>
+          <span className="section-label">Platform Features</span>
           <h2 className="font-display text-3xl md:text-4xl font-semibold mt-4 text-ice leading-snug">
-            Specialist contact center advisory across the platform lifecycle
+            Enterprise contact center intelligence in one interface
           </h2>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, i) => (
-            <ServiceCard key={s.title} s={s} index={i} />
+          {features.map((feature, i) => (
+            <FeatureCard key={feature.title} feature={feature} index={i} />
           ))}
         </div>
       </div>

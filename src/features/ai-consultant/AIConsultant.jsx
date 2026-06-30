@@ -11,7 +11,7 @@ function buildWelcomeMessage(technologyName) {
 }
 
 function buildComingSoonMessage(technologyName) {
-  return `Support for ${technologyName} is coming soon.\n\nWe are currently building the NexCX AI knowledge base for this technology. It will be available in a future update. Thank you for your patience.`;
+  return `Knowledge base for ${technologyName} will be available in an upcoming update.`;
 }
 
 export default function AIConsultant() {
@@ -178,7 +178,7 @@ export default function AIConsultant() {
                     chatEnabled
                       ? selectedTechnology.placeholder
                       : selectedTechnology
-                        ? `${selectedTechnology.name} support is coming soon.`
+                        ? "Knowledge base coming soon."
                         : "Select a technology to continue..."
                   }
                   readOnly={!chatEnabled}

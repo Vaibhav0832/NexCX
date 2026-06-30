@@ -2,7 +2,7 @@ import React from "react";
 
 const quickLinks = [
   { label: "Home", href: "#top" },
-  { label: "Services", href: "#services" },
+  { label: "Features", href: "#features" },
   { label: "Technologies", href: "#technologies" },
   { label: "Calculators", href: "#insights" },
   { label: "AI Consultant", href: "#ai-consultant", action: "ai" },
@@ -30,8 +30,8 @@ export default function Footer() {
               draggable="false"
             />
             <p className="text-sm text-slate-soft max-w-xs leading-relaxed">
-              Independent multi-technology contact center consulting for
-              enterprises that depend on resilient customer operations.
+              Enterprise contact center intelligence for resilient customer
+              operations.
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export default function Footer() {
             © {year} NexCX. All rights reserved.
           </p>
           <p className="text-xs text-slate-soft/70">
-            Independent Contact Center Consulting &amp; Advisory
+            Enterprise Contact Center Intelligence Platform
           </p>
         </div>
       </div>

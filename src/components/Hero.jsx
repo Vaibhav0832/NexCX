@@ -23,7 +23,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           src="/logo-full.png"
-          alt="NexCX - Multi-technology contact center consulting"
+          alt="NexCX - Enterprise Contact Center Intelligence Platform"
           className="mx-auto w-full max-w-md md:max-w-lg mb-8 select-none"
           draggable="false"
         />
@@ -34,8 +34,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="font-display text-4xl md:text-6xl font-semibold leading-tight tracking-tight text-ice"
         >
-          Optimize Your{" "}
-          <span className="text-gradient">Contact Center Technology</span>
+          Enterprise Contact Center{" "}
+          <span className="text-gradient">Intelligence Platform</span>
         </motion.h1>
 
         <motion.p
@@ -44,9 +44,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-6 text-lg md:text-xl text-slate-soft max-w-2xl mx-auto leading-relaxed"
         >
-          Independent contact center consulting across Genesys, Cisco, NICE,
-          Amazon Connect, Five9, Talkdesk, Avaya, Verint, and Alvaria
-          environments.
+          AI-assisted Genesys Cloud CX knowledge, structured technical answers,
+          and enterprise calculators for contact center teams.
         </motion.p>
 
         <motion.div
@@ -55,8 +54,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.45 }}
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a href="#contact" className="btn-primary">
-            Book Discovery Call
+          <a href="#features" className="btn-primary">
+            Explore Platform
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path
                 d="M3 8H13M13 8L9 4M13 8L9 12"
@@ -68,7 +67,7 @@ export default function Hero() {
             </svg>
           </a>
           <a href="#contact" className="btn-secondary">
-            Contact Us
+            Contact
           </a>
         </motion.div>
 
@@ -78,11 +77,11 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-mono uppercase tracking-widest text-slate-soft/70"
         >
-          <span>Vendor-Neutral</span>
+          <span>Enterprise Ready</span>
           <span className="w-1 h-1 rounded-full bg-slate-soft/40" />
-          <span>Independent Advisory</span>
+          <span>Knowledge Intelligence</span>
           <span className="w-1 h-1 rounded-full bg-slate-soft/40" />
-          <span>Multi-Technology Expertise</span>
+          <span>Contact Center Utilities</span>
         </motion.div>
       </div>
     </section>

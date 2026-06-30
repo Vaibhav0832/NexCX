@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const links = [
   { label: "Home", href: "#top" },
-  { label: "Services", href: "#services" },
+  { label: "Features", href: "#features" },
   { label: "Technologies", href: "#technologies" },
   { label: "Calculators", href: "#insights" },
   { label: "AI Consultant", href: "#ai-consultant", action: "ai" },
@@ -62,7 +62,7 @@ export default function Navbar() {
             Contact Us
           </a>
           <a href="#contact" className="btn-primary !py-2.5 !px-5 text-sm">
-            Book Discovery Call
+            Contact
           </a>
         </div>
 
@@ -117,7 +117,7 @@ export default function Navbar() {
               Contact Us
             </a>
             <a href="#contact" onClick={() => setOpen(false)} className="btn-primary w-full">
-              Book Discovery Call
+              Contact
             </a>
           </div>
         </motion.div>
