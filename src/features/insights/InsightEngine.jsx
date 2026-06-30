@@ -250,7 +250,7 @@ function Recommendations({ results }) {
 }
 
 export default function InsightEngine() {
-  const [activeId, setActiveId] = useState("cost");
+  const [activeId, setActiveId] = useState("");
   const [values, setValues] = useState(() => initialValues());
 
   const baseResults = useMemo(() => {
@@ -270,10 +270,13 @@ export default function InsightEngine() {
     [baseResults]
   );
 
-  const activeCalculator = calculators.find((calculator) => calculator.id === activeId) || calculators[0];
-  const activeErrors = validateInputs(activeCalculator.fields, values[activeCalculator.id] || {});
+  const activeCalculator = calculators.find((calculator) => calculator.id === activeId);
+  const activeErrors = activeCalculator
+    ? validateInputs(activeCalculator.fields, values[activeCalculator.id] || {})
+    : {};
 
   function handleChange(fieldId, value) {
+    if (!activeCalculator) return;
     setValues((current) => ({
       ...current,
       [activeCalculator.id]: {
@@ -306,16 +309,16 @@ export default function InsightEngine() {
         </motion.div>
 
         <div className="space-y-5">
-          <SummaryCards results={results} />
           <RecentCalculations activeId={activeId} setActiveId={setActiveId} results={results} />
-          <CalculatorShell
-            calculator={activeCalculator}
-            values={values[activeCalculator.id] || {}}
-            result={results[activeCalculator.id]}
-            errors={activeErrors}
-            onChange={handleChange}
-          />
-          <Recommendations results={results} />
+          {activeCalculator && (
+            <CalculatorShell
+              calculator={activeCalculator}
+              values={values[activeCalculator.id] || {}}
+              result={results[activeCalculator.id]}
+              errors={activeErrors}
+              onChange={handleChange}
+            />
+          )}
         </div>
       </div>
     </section>
