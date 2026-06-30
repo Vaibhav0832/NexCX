@@ -57,15 +57,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden lg:flex items-center gap-3">
-          <a href="#contact" className="btn-secondary !py-2.5 !px-5 text-sm">
-            Contact Us
-          </a>
-          <a href="#contact" className="btn-primary !py-2.5 !px-5 text-sm">
-            Contact
-          </a>
-        </div>
-
         <button
           onClick={() => setOpen(!open)}
           className="lg:hidden p-2 text-ice"
@@ -112,14 +103,6 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="flex flex-col gap-3 mt-6">
-            <a href="#contact" onClick={() => setOpen(false)} className="btn-secondary w-full">
-              Contact Us
-            </a>
-            <a href="#contact" onClick={() => setOpen(false)} className="btn-primary w-full">
-              Contact
-            </a>
-          </div>
         </motion.div>
       )}
     </header>
